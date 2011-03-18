@@ -1,1 +1,32 @@
 ### PHPGrid 3 Beta Module for Codeigniter 2.0
+
+***檔案原始網址***
+
+<http://phpgrid.sourceforge.net/>
+
+***修改的項目***
+
+- 使用CI2的session取代
+- 使用CI2的DB取代
+- 使用CI2的language取代
+- 使用route去取代原有的GET傳遞引數的方式，但POST的部份沒有做更動
+- 修正一些應該要用tr-th的地方，而卻使用了tr-td
+
+***尚未取代，或是未測試的項目***
+
+- file upload
+- fckedit
+- 多個顯示區塊
+
+***目前什麼功能可以使用的***
+
+- 一些基本欄位的CRUD
+- JOIN一個Table
+
+*** 用這個PHPGrid跟原本的CRUD有什麼樣的差別？***
+
+假設是CRUD4個動作，那在CI裡面，理論上是需要4個action才能做得到CRUD的動作，
+
+但是如果你是使用PHPGrid的話，只要一個action就可以辦到了，
+
+應該只要6行左右就可以把最基本的功能給完成。
