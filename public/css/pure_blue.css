@@ -1,0 +1,117 @@
+HTML {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FIELDSET {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BLOCKQUOTE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+ADDRESS {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BODY {
+	FONT: 76%/160% "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; BACKGROUND: url(bg-body.gif) #fff repeat-x
+}
+P {
+	TEXT-ALIGN: center
+}
+A:link {
+	BORDER-BOTTOM: #ffbac8 1px dotted; COLOR: #d42945; TEXT-DECORATION: none
+}
+A:visited {
+	BORDER-BOTTOM: medium none; COLOR: #d42945; TEXT-DECORATION: none
+}
+A:hover {
+	BORDER-BOTTOM: #f03b58 1px solid; COLOR: #f03b58; TEXT-DECORATION: none
+}
+A:focus {
+	BORDER-BOTTOM: #f03b58 1px solid; COLOR: #f03b58; TEXT-DECORATION: none
+}
+TABLE A {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+TABLE A:link {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+TABLE A:visited {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; MARGIN-TOP: 0.5em; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+TABLE {
+	MARGIN: 1em auto; WIDTH: 90%; BORDER-COLLAPSE: collapse; BORDER-TOP: #e3f1fe 1px solid; BORDER-RIGHT: #e3f1fe 1px solid
+}
+CAPTION {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; MARGIN: 1em 0px 0px; PADDING-LEFT: 0px; CAPTION-SIDE: top; PADDING-RIGHT: 0px; LETTER-SPACING: 0.1em; COLOR: #9ba9b4; FONT-SIZE: 0.94em; PADDING-TOP: 0px
+}
+TR.odd TD {
+	BACKGROUND: url(images/background.gif) #f4f9fe no-repeat
+}
+TR.odd .column1 {
+	BACKGROUND: url(images/background.gif) #f4f9fe no-repeat
+}
+.column1 {
+	BACKGROUND: #f9fcfe
+}
+TD {
+	BORDER-BOTTOM: #e3f1fe 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #e5eff8 1px solid; PADDING-BOTTOM: 0.3em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; COLOR: #678197; PADDING-TOP: 0.3em
+}
+TH {
+	BORDER-BOTTOM: #e3f1fe 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #e5eff8 1px solid; PADDING-BOTTOM: 0.3em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; COLOR: #678197; FONT-WEIGHT: normal; PADDING-TOP: 0.3em
+}
+THEAD TH {
+	TEXT-ALIGN: center; FONT: bold 1.2em/2em "Century Gothic", "Trebuchet MS", Arial, Helvetica, sans-serif; BACKGROUND: #f4f9fe; COLOR: #66a3d3
+}
+THEAD  TD {
+	TEXT-ALIGN: center; FONT: bold 1.2em/2em "Century Gothic", "Trebuchet MS", Arial, Helvetica, sans-serif; BACKGROUND: #f4f9fe; COLOR: #66a3d3
+}
+TFOOT TH {
+	TEXT-ALIGN: center; BACKGROUND: #f4f9fe
+}
+TFOOT TH STRONG {
+	MARGIN: 0.5em 0.5em 0.5em 0px; FONT: bold 1.2em "Century Gothic", "Trebuchet MS", Arial, Helvetica, sans-serif; COLOR: #66a3d3
+}
+TFOOT TH EM {
+	FONT-STYLE: normal; COLOR: #f03b58; FONT-SIZE: 1.1em; FONT-WEIGHT: bold
+}

@@ -1,0 +1,26 @@
+<link rel="StyleSheet" href="editor/base.css">
+<script type="text/javascript" src="editor/editor.js"></script>
+<script type="text/javascript">
+var guid = "1324481743" ;
+var sState = "iframe";
+var checkEdit;
+</script>
+<div id="editor_body"></div> 
+<script type="text/javascript">
+var et; 
+function init() {
+	writeCookie("EDiaryEditor_RSave", "true", 1);
+	if(sState == "iframe"){
+		EDiaryEditor.initialize("EDiaryEditor", "editor_body", true, "<div>&nbsp;</div>");
+		et = EDiaryEditor;
+	}else{
+		EDiaryEditor.initialize("EDiaryEditor", "editor_body", true, "");
+		et = EDiaryEditor;
+	}	 
+}
+if(window.Event)
+    window.onload = init;
+else
+ 	setTimeout(init, 100);
+</script>
+ 

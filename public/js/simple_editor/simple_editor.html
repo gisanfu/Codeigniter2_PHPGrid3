@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>HTML简易编辑器 - http://bolm.cn</title>
+<script language="javascript">
+function CheckForm()
+{
+  
+  if (document.input.y.value=="")
+  {
+	alert("b！");
+	return false;
+  }
+}
+</script>
+</head>
+<body>
+<form name="input" method="post" action="" onsubmit="return CheckForm();">
+ 
+ 
+  <textarea id="y" name="y" style="display:none;">调用：500宽，300高</textarea>
+  <iframe id="yy" src="editor.html?id=y" frameborder="0" scrolling="no" style="width:500px;height:300px;"></iframe>
+</form>
+ 
+</body>
+</html>
