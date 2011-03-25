@@ -38,11 +38,11 @@
  */
 
 //session_start();
-include_once('config.inc.php');
+//include_once('config.inc.php');
 // require_once("Mysql.php");
 
 //load language file 
-require_once("lang/".LANGUAGE_FILE);
+//require_once("lang/".LANGUAGE_FILE);
 
 
 //$this->tableBodyHtml.='<a title="body_control" href="?datagrid_action=view&var_name='.$var_name.'&'.$linkUrl.'" >'.$GLOBALS['language']['view'].'</a> ';
@@ -164,6 +164,8 @@ class Dataview {
 
 	protected $isloadjs = '';
 
+	protected $ci;
+
 	/**
 	 *构造函数,初始化连接数据库
 	 */
@@ -177,6 +179,9 @@ class Dataview {
 		$this->db = $CI->db;
 		$this->session = $CI->session;
 		$this->lang = $CI->lang;
+
+		$this->ci = $CI;
+
 		//header("Content-Type: text/html; charset=utf-8");
 		$this->create_time = time();
 		/*
@@ -446,10 +451,10 @@ class Dataview {
 		if($this->is_use_cache){
 			if (file_exists('cache/'.$cache_file)) {
 				include_once('cache/'.$cache_file);
-				if($exprie_time>time()) {
-					$explain_row=$explain_row_cache;
-					$tableNames=$tableNames_cache;
-					$fieldInfo=$fieldInfo_cache;
+				if($exprie_time > time()) {
+					$explain_row = $explain_row_cache;
+					$tableNames = $tableNames_cache;
+					$fieldInfo = $fieldInfo_cache;
 				}
 			}
 		}
@@ -834,6 +839,5 @@ class Dataview {
 		$this->setTableHeaderHtml();
 		$this->setTableBodyHtml();
 		return $this->makeHtml();
-
 	}
 }

@@ -95,7 +95,7 @@ class Datagrid extends Dataview {
 	/*
 	 * 当前分页的第几页
 	 */
-	public $page		= 1;
+	public $page		= 0;
 	
 	/*
 	 * 总共分页数
@@ -518,7 +518,7 @@ class Datagrid extends Dataview {
 		$this->tableFooterHtml.='
 		<tfoot id="'.$var_name.'_tfoot">
 			<tr id="'.$var_name.'_tfoot_tr">
-				<td id="'.$var_name.'_tfoot_td"   colspan="'.strval(count($this->fields)+2).'"   >'.$this->lang->line('total').'：'.$this->rowCount.' &nbsp;'.$this->getPagesInfo().'</td>
+				<td id="'.$var_name.'_tfoot_td"   colspan="'.strval(count($this->fields)+2).'"   >'.$this->lang->line('total').'：'.$this->rowCount.' &nbsp;'.$this->getPageStr().'</td>
 		 	 </tr>
 	 	</tfoot>'."\n";
 	}
@@ -1158,12 +1158,12 @@ class Datagrid extends Dataview {
 		return $html;
 	}
 
-
-
 	/**
 	 * 获得分页偏移量
+	 * 這個函數己沒有在使用
 	 * @return none
 	 */
+	/*
 	function getPagesInfo($finally=true){
 		$var_name=$this->this_var_name;
 		$cur_page=$this->page;
@@ -1187,75 +1187,22 @@ class Datagrid extends Dataview {
 			return array($offset,$pages,$cur_page);
 		}
 		//return array($offset,$pages,$page);
-
 	}
+	*/
 
 	/**
-	 * 分页公共函数
-	 *
-	 * @param int $pages 			总页数
-	 * @param int $page				当前页数
-	 * @param int $page_url_name	URL的参数名称
-	 * @return    					返回分页的HTML		
+	 * 替換掉原有的函式
 	 */
-	public function getPageStr($pages,$page,$page_url_name="datagrid_page"){
-
-		$new_url=$_SERVER['REQUEST_URI'];
-		$var_name=$this->this_var_name;
-		if(preg_match('/'.$page_url_name.'=(.\d*)/i', $new_url)){
-			$new_url = preg_replace('/&'.$page_url_name.'=(.\d*)/i', '', $new_url);
-		}
-		if(!strstr($new_url,'?')){
-			$new_url.='?var_name='.$var_name;
-		}else{
-			$new_url.='&var_name='.$var_name;
-		}
-		$page_str="";
-		if($pages>1){
-			$next=$page+1;
-			if($page==$pages) $next=$pages;
-			$pre=$page-1;
-			if($page==1) $pre=1;
-			$page_str= ' ' ;
-			$page_str.= ' <a  href="'.$new_url."&".$page_url_name.'='.intval(1).'" >'.$this->lang->line('page_first').'</a>&nbsp;<a  href="'.$new_url."&".$page_url_name.'='.intval($pre).'"   >'.$this->lang->line('page_pre').'</a>&nbsp;
-			 '; 
-			if($pages>9){
-				if($page<=3){
-					for($i=1;$i<$page;$i++){
-						$page_str.=' <a href="'.$page_url_name.intval($i).'" >'.$i.'</a>';
-					}
-				}else{
-					//$page_str.=' <a href="'.$new_url."&".$page_url_name.'='.intval($page-3).'" >'.intval($page-3).'</a>';
-					$page_str.='<a href="'.$new_url."&".$page_url_name.'='.intval($page-2).'" >'.intval($page-2).'</a>&nbsp;';
-					$page_str.='<a href="'.$new_url."&".$page_url_name.'='.intval($page-1).'" >'.intval($page-1).'</a>&nbsp;';
-
-				}
-				$page_str.='<a href="#"   >'.$page.'</a>';
-				if(($pages-$page)>3){
-					$page_str.='<a href="'.$new_url."&".$page_url_name.'='.intval($page+1).'" >'.intval($page+1).'</a>&nbsp;';
-					$page_str.='<a href="'.$new_url."&".$page_url_name.'='.intval($page+2).'" >'.intval($page+2).'</a>&nbsp;';
-					//$page_str.='<div class="page_num"><a href="'.$new_url."&".$page_url_name.'='.intval($page+3).'" >'.intval($page+3).'</a></div> ';
-				}else{
-					for($i=$page+1;$i<=($pages);$i++){
-						$page_str.='<a href="'.$new_url."&".$page_url_name.'='.intval($i).'" >'.$i.'</a> ';
-					}
-				}
-			}else{
-				for($i=1;$i<=$pages;$i++){
-					$page_str.='<a href="'.$new_url."&".$page_url_name.'='.intval($i).'" >'.$i.'</a>&nbsp;';
-
-				}
-			}
-
-			$page_str.= '<a href="'.$new_url."&".$page_url_name.'='.intval($next).'"    >'.$this->lang->line('page_next').'</a>
-			&nbsp;<a href="'.$new_url."&".$page_url_name.'='.intval($pages).'"   >'.$this->lang->line('page_end').'</a>&nbsp;&nbsp;';
-			$page_str.='<a href="#"  >GOTO</a>&nbsp;<input  name="page_'.$page.'"  id="page_"   size="2"  type="text" />&nbsp;<a href="#"  onclick="window.location.href=\''.$new_url."&".$page_url_name.'='.'\'+document.getElementById(\'page_\').value;">GO！</a>
-           ';
-		}
-		return $page_str;
-
+	public function getPageStr(){
+		$var_name = $this->this_var_name;
+		$splitpage_url = base_url().'/'.$this->get['router_class'].'--phpgrid_page_'.$var_name;
+		$this->ci->load->library('splitpage');
+		$this->ci->splitpage->init($this->page, $this->rowCount, 9, $this->pageRow);
+		$this->ci->splitpage->setViewList('_');
+		$page_control = $this->ci->splitpage->basic_element;
+		$page_number = $this->ci->splitpage->page_element;
+		return splitpage($this->rowCount, $page_control, $page_number, $splitpage_url);
 	}
-
 
 	/**
 	 * 处理文件上传 
@@ -1282,13 +1229,5 @@ class Datagrid extends Dataview {
 			return array(true, $upload_dir.$newFilename);
 		}
 		return array(false,"$oldFilename ".$this->lang->line('upload_no_succ'));
-
 	} // funtion
-
-
-
-	
 }
-
-
-?>
